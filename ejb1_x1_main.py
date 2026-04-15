@@ -45,12 +45,26 @@ filter = "a", este debe devolver 19, ya que en la segunda oración "¿Cómo est�
 el valor pasado como filtro y la oración tiene una longitud de la cadena de texto más larga. 
 """
 # Add your imports here
-from util_package import text_manager 
+from util_package import text_manager
 from util_package.text_manager import TEXT, is_newline, is_space, remove_punctuation_marks
 
 def find_largest_word(text):
     # Write here your code
-    pass                
+    text_clean = remove_punctuation_marks(text)
+    text_clean += " "
+
+    palabra_actual = ""
+    palabra_mas_larga = ""
+
+    for caracter in text_clean:
+        if not is_space(caracter) and not is_newline(caracter): 
+            palabra_actual += caracter
+        else:
+            if len(palabra_actual) > len(palabra_mas_larga):
+                palabra_mas_larga = palabra_actual
+            palabra actual = ""
+    return palabra_mas_larga
+         
 
 def is_palindrome_word(word):
     # Write here your code
