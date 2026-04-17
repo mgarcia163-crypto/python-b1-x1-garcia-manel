@@ -68,18 +68,37 @@ def find_largest_word(text):
 
 def is_palindrome_word(word):
     # Write here your code
-    pass
+    if len(word) <= 1:
+        return True
+    if word[0].lower() == word[-1].lower():
+        return is_palindrome_word(word[1:-1])
+    return False
     
-
 
 def count_palindrome_words(text):
     # Write here your code
-    pass
+    contador = 0 
+    for palabra in text.split():
+        if is_palindrome_word(palabra):
+        contador += 1 
+    return contador
+    
 
 
 def find_size_largest_sentence(text, filter):
     # Write here your code
-    pass
+    oraciones = text.split ('\n')
+    coincidentes= []
+    for oracion in oraciones:
+        if filter in oracion:
+            coincidentes.append(oracion)
+    if len(coincidentes) == 0:
+        raise ValueError("No hay ninguna oración con ese filtro")
+    mas_larga = 0
+    for oracion in coincidentes:
+        if len(oracion) > mas_larga:
+            mas_larga = len(oracion)
+    return mas_larga
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
