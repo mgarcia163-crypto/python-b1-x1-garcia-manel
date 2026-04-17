@@ -77,27 +77,43 @@ def is_palindrome_word(word):
 
 def count_palindrome_words(text):
     # Write here your code
+    text = text + " "
+    palabra_actual = ""
     contador = 0 
-    for palabra in text.split():
-        if is_palindrome_word(palabra):
-        contador += 1 
+
+    for caracter in text:
+        if not is_space(caracter) and not is_newline(caracter):
+            palabra_actual += caracter
+        else:
+            if len(palabra_actual) > 0:
+                if is_palindrome_word(palabra_actual):
+                    contador += 1
+            palabra actual = ""
+            
     return contador
     
 
 
 def find_size_largest_sentence(text, filter):
     # Write here your code
-    oraciones = text.split ('\n')
+   text = text + 'n'
+   oracion actual = ""
     coincidentes= []
-    for oracion in oraciones:
-        if filter in oracion:
-            coincidentes.append(oracion)
+    for caracter in text:
+        if not is_newline(caracter):
+            oracion_actual += caracter
+        else:
+            if filter in oracion_actual:
+                coincidentes.append(oracion_actual)
+            oracion_actual = ""
+
     if len(coincidentes) == 0:
         raise ValueError("No hay ninguna oración con ese filtro")
     mas_larga = 0
     for oracion in coincidentes:
         if len(oracion) > mas_larga:
             mas_larga = len(oracion)
+
     return mas_larga
 
 
