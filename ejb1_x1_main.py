@@ -87,7 +87,7 @@ def count_palindrome_words(text):
         else:
             if len(palabra_actual) > 0:
                 palabra_limpia = remove_punctuation_marks(palabra_actual)
-                if is_palindrome_word(palabra_actual):
+                if is_palindrome_word(palabra_limpia):
                     contador += 1
             palabra_actual = ""
 
