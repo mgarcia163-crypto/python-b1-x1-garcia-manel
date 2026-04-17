@@ -62,7 +62,7 @@ def find_largest_word(text):
         else:
             if len(palabra_actual) > len(palabra_mas_larga):
                 palabra_mas_larga = palabra_actual
-            palabra actual = ""
+            palabra_actual = ""
     return palabra_mas_larga
          
 
@@ -88,16 +88,16 @@ def count_palindrome_words(text):
             if len(palabra_actual) > 0:
                 if is_palindrome_word(palabra_actual):
                     contador += 1
-            palabra actual = ""
-            
+            palabra_actual = ""
+
     return contador
     
 
 
 def find_size_largest_sentence(text, filter):
     # Write here your code
-   text = text + 'n'
-   oracion actual = ""
+    text = text + 'n'
+    oracion_actual = ""
     coincidentes= []
     for caracter in text:
         if not is_newline(caracter):
